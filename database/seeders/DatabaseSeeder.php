@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Product;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +19,25 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
         ]);
-        // User::factory(10)->create();
+
+        // Tambahkan data dummy Produk
+        Product::create([
+            'name' => 'Laptop',
+            'price' => 8500000,
+            'stock' => 10,
+        ]);
+
+        Product::create([
+            'name' => 'Mouse',
+            'price' => 150000,
+            'stock' => 25,
+        ]);
+
+        Product::create([
+            'name' => 'Keyboard',
+            'price' => 450000,
+            'stock' => 15,
+        ]);
 
         User::factory()->create([
             'name' => 'Test User',

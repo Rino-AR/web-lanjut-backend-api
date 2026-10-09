@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Middleware\RequestLogger;
-
 use App\Http\Controllers\AuthController;
 
 // Public Endpoint (Tidak butuh token)
