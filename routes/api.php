@@ -9,12 +9,12 @@ use App\Http\Controllers\AuthController;
 
 // Public Endpoint (Tidak butuh token)
 Route::post('/login', [AuthController::class, 'login']);
+Route::get('/products', [ProductController::class, 'index']);
 
 // Protected Endpoint (Membutuhkan JWT)[cite: 1]
 Route::middleware('auth:api')->group(function () {
     Route::get('/profile', [AuthController::class, 'profile']);
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::get('/products', [ProductController::class, 'index']);
 });
 /*Route::get('/products', function () {
     return response()->json([
