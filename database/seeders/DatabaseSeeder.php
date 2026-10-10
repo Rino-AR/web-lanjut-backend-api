@@ -21,25 +21,25 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Tambahkan data dummy Produk
-        Product::create([
+        Product::firstOrCreate([
             'name' => 'Laptop',
             'price' => 8500000,
             'stock' => 10,
         ]);
 
-        Product::create([
+        Product::firstOrCreate([
             'name' => 'Mouse',
             'price' => 150000,
             'stock' => 25,
         ]);
 
-        Product::create([
+        Product::firstOrCreate([
             'name' => 'Keyboard',
             'price' => 450000,
             'stock' => 15,
         ]);
 
-        User::factory()->create([
+        User::firstOrCreate([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);

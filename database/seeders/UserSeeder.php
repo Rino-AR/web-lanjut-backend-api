@@ -11,23 +11,23 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         // Data Admin[cite: 1]
-        User::create([
+        User::firstOrCreate([
             'name' => 'Imam',
             'email' => 'imam@example.com',
             'password' => Hash::make('password123'), // Password wajib di-hash[cite: 1]
             'role' => 'admin',
         ]);
 
-        // Data Mahasiswa[cite: 1]
-        User::create([
+        // Data Mahasiswa
+        User::firstOrCreate([
             'name' => 'Budi',
             'email' => 'budi@example.com',
             'password' => Hash::make('password123'),
             'role' => 'mahasiswa',
         ]);
 
-        // Data Dosen[cite: 1]
-        User::create([
+        // Data Dosen
+        User::firstOrCreate([
             'name' => 'Siti',
             'email' => 'siti@example.com',
             'password' => Hash::make('password123'),
