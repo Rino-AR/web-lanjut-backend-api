@@ -10,28 +10,34 @@ class UserSeeder extends Seeder
 {
     public function run(): void
     {
-        // Data Admin[cite: 1]
-        User::firstOrCreate([
-            'name' => 'Imam',
-            'email' => 'imam@example.com',
-            'password' => Hash::make('password123'), // Password wajib di-hash[cite: 1]
-            'role' => 'admin',
-        ]);
+        // Data Admin
+        User::firstOrCreate(
+            ['email' => 'imam@example.com'], // Parameter 1: Kriteria pencarian
+            [
+                'name' => 'Imam',
+                'password' => Hash::make('password123'),
+                'role' => 'admin',
+            ] // Parameter 2: Data yang diisi jika user belum ada
+        );
 
         // Data Mahasiswa
-        User::firstOrCreate([
-            'name' => 'Budi',
-            'email' => 'budi@example.com',
-            'password' => Hash::make('password123'),
-            'role' => 'mahasiswa',
-        ]);
+        User::firstOrCreate(
+            ['email' => 'budi@example.com'],
+            [
+                'name' => 'Budi',
+                'password' => Hash::make('password123'),
+                'role' => 'mahasiswa',
+            ]
+        );
 
         // Data Dosen
-        User::firstOrCreate([
-            'name' => 'Siti',
-            'email' => 'siti@example.com',
-            'password' => Hash::make('password123'),
-            'role' => 'dosen',
-        ]);
+        User::firstOrCreate(
+            ['email' => 'siti@example.com'],
+            [
+                'name' => 'Siti',
+                'password' => Hash::make('password123'),
+                'role' => 'dosen',
+            ]
+        );
     }
 }
