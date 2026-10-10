@@ -38,10 +38,5 @@ class DatabaseSeeder extends Seeder
             'price' => 450000,
             'stock' => 15,
         ]);
-
-        User::firstOrCreate([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
     }
 }
